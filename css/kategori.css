@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* navbar start */
+nav {
+  border-bottom: 1px solid gray;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+nav .nav img {
+  height: 65px;
+  width: 70px;
+}
+
+nav .srh form {
+  width: 450px;
+  margin-left: 110px;
+}
+
+nav .srh form input {
+  border: 2px solid black;
+}
+
+nav .srh .btn {
+  border: 2px solid black;
+  font-family: "Concert One", sans-serif;
+}
+
+nav .srh .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+nav .collapse .a1,
+.dropdown {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+}
+
+nav .collapse .dropdown-item {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+/* navbar end */
+
+/* Teks */
+.teks h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 33px;
+  font-weight: 700;
+}
+/* teks end */
+
+/* produk */
+.card1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 70px auto 0;
+}
+
+.card1 .cd1 {
+  width: 350px;
+  padding: 10px;
+  border-radius: 15px;
+  height: 745px;
+}
+
+.card1 .cd1 img {
+  width: 150px;
+  height: 145px;
+  margin: auto;
+}
+
+.card1 .cd1 p {
+  font-size: 18px;
+  color: #4d4d4d;
+}
+
+.card1 .cd1 h5 {
+  margin-top: -13px;
+  font-size: 18px;
+}
+
+.card1 .cd1 .ul1 .p1  {
+  margin-top: 8px;
+  margin-left: 18px;
+  font-size: 14px;
+  color: #000;
+}
+
+.card1 .cd1 .ul1 .h52  {
+  font-size: 19px;
+  color: #c74200;
+  margin-left: 18px;
+}
+
+.card1 .cd1 .ul1 .p2  {
+  margin-left: 18px;
+  font-size: 13px;
+  color: #000;
+}
+
+.card1 .cd1 .ul1 {
+  position: absolute;
+  margin-top: 250px;
+}
+
+.card1 .cd1 .ul2 {
+  position: absolute;
+  margin-top: 368px;
+}
+
+.card1 .cd1 .ul2 li {
+  margin-left: 33px;
+  font-size: 13px;
+}
+
+.card1 .cd1 .ul2 li .p1 {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #000;
+}
+
+.card1 .cd1 .ul2 li .p2 {
+  font-size: 15px;
+  color: #000;
+  margin-top: -7px;
+}
+/* produk end */
+
+/* Footer */
+.footer {
+  margin-top: 80px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  padding: 5px;
+}
+
+.footer p {
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+/* Footer End */

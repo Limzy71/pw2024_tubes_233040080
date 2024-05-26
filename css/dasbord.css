@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* navbar start */
+nav {
+  border-bottom: 1px solid gray;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+nav .nav img {
+  height: 65px;
+  width: 70px;
+}
+
+nav .srh form {
+  width: 450px;
+  margin-left: 110px;
+}
+
+nav .srh form input {
+  border: 2px solid black;
+}
+
+nav .srh .btn {
+  border: 2px solid black;
+  font-family: "Concert One", sans-serif;
+}
+
+nav .srh .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+nav .collapse .a1,
+.dropdown {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+}
+
+nav .collapse .dropdown-item {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+/* navbar end */
+
+/* Hero */
+.kk {
+  border-bottom: 0.2rem solid gray;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+  padding-top: 15px;
+  height: 248px;
+}
+
+.nav .ktg1::after {
+  content: "";
+  display: block;
+  margin-left: -2px;
+  padding-bottom: 4.1rem;
+  border-bottom: 0.2rem solid black;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.nav .ktg1:hover::after {
+  transform: scaleX(0.5);
+}
+
+.nav .ktg2::after {
+  content: "";
+  display: block;
+  padding-bottom: 1.4rem;
+  border-bottom: 0.2rem solid black;
+  margin-left: 8px;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.nav .ktg2:hover::after {
+  transform: scaleX(0.7);
+}
+
+.kk .nav-item .sz1 img {
+  width: 120px;
+  height: 120px;
+}
+
+.kk .nav-item .sz2 img {
+  width: 115px;
+  height: 115px;
+  margin-bottom: 5px;
+}
+
+.kk .nav-item .sz3 img {
+  width: 120px;
+  height: 120px;
+  margin-top: -3px;
+  margin-bottom: 3px;
+}
+
+.kk .nav-item .series1 {
+  margin-left: 41px;
+  text-decoration: none;
+  color: black;
+}
+
+.kk .nav-item .series2 {
+  margin-left: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.kk .nav-item .series3 {
+  margin-left: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.kk .nav-item .ts1 {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 27px;
+}
+
+.kk .nav-item .ts2 {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.kk .nav-item .ts3 {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+/* Hero End */
+
+/* teks */
+.teks1 h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  color: #33bdff;
+}
+
+.teks1 p,
+.teks2 p,
+.teks3 p {
+  width: 80%;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+.teks2 h5,
+.teks3 h5 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 700;
+}
+/* teks end */
+
+/* Gambar */
+.gambar {
+  margin-top: 60px;
+}
+
+.gambar img {
+  width: 500px;
+  height: 480px;
+  margin-left: 410px;
+}
+/* Gambar End */
+
+/* Footer */
+.footer {
+  margin-top: 80px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  padding: 5px;
+}
+
+.footer p {
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+/* Footer End */

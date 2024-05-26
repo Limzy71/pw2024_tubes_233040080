@@ -1,0 +1,142 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Rubik+Mono+One&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* navbar start */
+nav {
+  border-bottom: 1px solid gray;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+nav .nav img {
+  height: 65px;
+  width: 70px;
+}
+
+nav .srh form {
+  width: 450px;
+  margin-left: 110px;
+}
+
+nav .srh form input {
+  border: 2px solid black;
+}
+
+nav .srh .btn {
+  border: 2px solid black;
+  font-family: "Concert One", sans-serif;
+}
+
+nav .srh .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+nav .collapse .a1,
+.dropdown {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+}
+
+nav .collapse .dropdown-item {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+/* navbar end */
+
+/* teks */
+.teks h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 33px;
+  font-weight: 700;
+}
+
+.teks p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  font-style: normal;
+  margin-top: 10px;
+}
+/* teks end */
+
+/* Produk */
+.produk {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 20px 40px;
+}
+
+.produk .cd {
+  margin-left: 70px;
+  width: 320px;
+}
+
+.produk .cd h5 {
+  margin-top: 15px;
+}
+
+.produk .cd img {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.produk .cd a {
+  color: #006ce1;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.produk .cd p {
+  font-family: "Poppins", sans-serif;
+}
+/* produk end */
+
+/* tambah */
+.tambah {
+  text-align: center;
+}
+
+.tambah button {
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: blue;
+  color: #fff;
+  border: 2px solid #000;
+
+}
+/* tambah end */
+
+/* Footer */
+.footer {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  padding: 5px;
+  margin-top: 100px;
+}
+
+.footer p {
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+/* Footer End */
