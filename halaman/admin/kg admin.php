@@ -1,6 +1,6 @@
 <?php
 
-require '../functions/functions.php';
+require '../../functions/functions.php';
 
 $isi = query("SELECT * FROM tb_kategori");
 
@@ -18,7 +18,7 @@ $isi = query("SELECT * FROM tb_kategori");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- link css -->
-    <link rel="stylesheet" href="../css/kategori.css">
+    <link rel="stylesheet" href="../../css/kategori.css">
 
     <!-- Link Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -29,7 +29,7 @@ $isi = query("SELECT * FROM tb_kategori");
     <!-- nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-lg-top">
         <div class="container nav">
-            <img src="../img/logo asus1.png" alt="Logo">
+            <img src="../../img/logo asus1.png" alt="Logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,8 +43,19 @@ $isi = query("SELECT * FROM tb_kategori");
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <box-icon name='menu'></box-icon>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="kelola user.php">Kelola User</a></li>
+                            <li><a class="dropdown-item" href="tambah pd.php">Tambah Produk</a></li>
+                            <li><a class="dropdown-item" href="tambah kg.php">Tambah Kategori</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="dasboard utama.php">Home</a>
+                        <a class="nav-link a1" aria-current="page" href="admin.php">Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -53,12 +64,12 @@ $isi = query("SELECT * FROM tb_kategori");
 
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="produk.php">Produk </a>
+                        <a class="nav-link a1" aria-current="page" href="pd admin.php">Produk </a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user'></box-icon>
+                            <box-icon type='solid' name='user-check'></box-icon>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="dasboard.php">Log Out</a></li>
@@ -75,13 +86,13 @@ $isi = query("SELECT * FROM tb_kategori");
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
+                <img src="../../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
             </div>
             <div class="carousel-item">
-                <img src="../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
+                <img src="../../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
             </div>
             <div class="carousel-item">
-                <img src="../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
+                <img src="../../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -107,9 +118,9 @@ $isi = query("SELECT * FROM tb_kategori");
         <?php foreach ($isi as $i) : ?>
             <div class="card cd">
                 <h5 class="card-title"><?= $i["nama_kategori"]; ?></h5>
-                <img src="../img/<?= $i["gambar"]; ?>" class="card-img-top">
+                <img src="../../img/<?= $i["gambar"]; ?>" class="card-img-top">
                 <div class="card-body">
-                    <a href="detail.php?id=<?= $i['id']; ?>" class="btn ">Lihat Semua</a>
+                    <a href="#" class="btn ">Lihat Semua</a>
                     <p class="card-text"><?= $i["deskripsi"]; ?></p>
                 </div>
             </div>

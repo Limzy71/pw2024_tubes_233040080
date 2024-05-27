@@ -64,81 +64,38 @@ nav .collapse .dropdown-item {
 /* teks end */
 
 /* produk */
-.card1 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.produk {
   width: 90%;
-  margin: 70px auto 0;
+  margin: 50px auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 20px 40px;
 }
 
-.card1 .cd1 {
-  width: 350px;
-  padding: 10px;
-  border-radius: 15px;
-  height: 745px;
+.produk .cd {
+  margin-left: 70px;
+  width: 320px;
 }
 
-.card1 .cd1 img {
-  width: 150px;
-  height: 145px;
-  margin: auto;
-}
-
-.card1 .cd1 p {
-  font-size: 18px;
-  color: #4d4d4d;
-}
-
-.card1 .cd1 h5 {
-  margin-top: -13px;
-  font-size: 18px;
-}
-
-.card1 .cd1 .ul1 .p1  {
-  margin-top: 8px;
-  margin-left: 18px;
-  font-size: 14px;
-  color: #000;
-}
-
-.card1 .cd1 .ul1 .h52  {
-  font-size: 19px;
-  color: #c74200;
-  margin-left: 18px;
-}
-
-.card1 .cd1 .ul1 .p2  {
-  margin-left: 18px;
-  font-size: 13px;
-  color: #000;
-}
-
-.card1 .cd1 .ul1 {
-  position: absolute;
-  margin-top: 250px;
-}
-
-.card1 .cd1 .ul2 {
-  position: absolute;
-  margin-top: 368px;
-}
-
-.card1 .cd1 .ul2 li {
-  margin-left: 33px;
-  font-size: 13px;
-}
-
-.card1 .cd1 .ul2 li .p1 {
+.produk .cd h5 {
   margin-top: 15px;
-  font-size: 15px;
-  color: #000;
 }
 
-.card1 .cd1 .ul2 li .p2 {
-  font-size: 15px;
-  color: #000;
-  margin-top: -7px;
+.produk .cd img {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.produk .cd a {
+  color: #006ce1;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.produk .cd p {
+  font-family: "Poppins", sans-serif;
 }
 /* produk end */
 

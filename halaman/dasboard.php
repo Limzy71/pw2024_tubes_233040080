@@ -40,11 +40,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="login.php">Produk</a>
+                    <a class="nav-link a1" aria-current="page" href="login.php">Kategori</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="login.php">Kategori</a>
+                    <a class="nav-link a1" aria-current="page" href="login.php">Produk</a>
                     </li>
 
                     <li class="nav-item dropdown">
