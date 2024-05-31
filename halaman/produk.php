@@ -11,7 +11,7 @@ $produk = query("SELECT * FROM tb_produk");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUK</title>
+    <title>Produk</title>
 
     <!-- link css -->
     <link rel="stylesheet" href="../css/produk.css">
@@ -91,7 +91,7 @@ $produk = query("SELECT * FROM tb_produk");
     <!-- carousel end -->
 
     <!-- Teks -->
-    <div class="teks" id="all-series">
+    <div class="teks">
         <h1>Rekomdasi Laptop Unggulan Dari Kami</h1>
         <p>Laptop ASUS yang dirancang dengan presisi sesuai gaya kamu dan fitur modern untuk meningkatkan produktivitas kamu.</p>
     </div>
@@ -99,7 +99,7 @@ $produk = query("SELECT * FROM tb_produk");
 
     <!-- produk -->
     <form action="" method="post">
-    <div class="card1" id="vivobook-s">
+    <div class="card1">
         <?php foreach ($produk as $pro) : ?>
             <div class="card cd1">
                 <img src="../img/<?= $pro["image"]; ?>" class="card-img-top">

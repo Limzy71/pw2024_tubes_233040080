@@ -2,8 +2,11 @@
 
 require '../functions/functions.php';
 
-$isi = query("SELECT * FROM tb_kategori");
+//ambil id dari URL
+$id = $_GET['id'];
 
+// query kategori berdasrkan id
+$ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
 ?>
 
 <!doctype html>
@@ -12,13 +15,13 @@ $isi = query("SELECT * FROM tb_kategori");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kategori Admin</title>
+  <title>Detail Produk</title>
 
   <!-- Link Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   <!-- link css -->
-  <link rel="stylesheet" href="../css/kategori.css">
+  <link rel="stylesheet" href="../css/produk.css">
 
   <!-- Link Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -48,7 +51,7 @@ $isi = query("SELECT * FROM tb_kategori");
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active a1" aria-current="page" href="#">Kategori </a>
+            <a class="nav-link a1" aria-current="page" href="kategori.php">Kategori </a>
           </li>
 
 
@@ -97,15 +100,49 @@ $isi = query("SELECT * FROM tb_kategori");
 
   <!-- Teks -->
   <div class="teks">
-    <h1>All Kategori</h1>
+    <h1>Detail Produk</h1>
   </div>
   </form>
   <!-- Teks End -->
 
   <!-- produk -->
-  
+  <div class="card1">
+    <?php foreach ($ktg as $k) : ?>
+      <div class="card cd1">
+        <img src="../img/<?= $k['image']; ?>" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text"><?= $k["ukuran"];  ?></p>
+          <h5 class="card-title"><?= $k["nama_produk"]  ?></h5>
+        </div>
+        <ul class="list-group list-group-flush ul1">
+          <p class="p1">Harga Mulai</p>
+          <h5 class="h52"><?= $k["harga"];  ?></h5>
+          <p class="p2">Harga ini mungkin tidak merujuk ke spesifikasi di bawah ini.</p>
+        </ul>
+        <ul class="list-group list-group-flush ul2">
+          <li>
+            <p class="p1"><?= $k["deskripsi"];  ?></p>
+          </li>
+          <li>
+            <?php
+            $ktg2 = $k["deskripsi_2"];
+            $ktg2 = explode(",", $ktg2);
+            ?>
+            <?php foreach ($ktg2 as $kt) : ?>
+              <p class="p2"><?= $kt; ?></p>
+            <?php endforeach; ?>
+          </li>
+        </ul>
+      </div>
+    <?php endforeach; ?>
+  </div>
   <!-- Produk End -->
 
+  <!-- button -->
+  <div class="btn2">
+    <a href="kategori.php"><button>Kembali Ke Kategori</button></a>
+  </div>
+  <!-- button End -->
 
   <!-- Footer -->
   <div class="footer">

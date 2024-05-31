@@ -2,7 +2,7 @@
 
 require '../functions/functions.php';
 
-$isi = query("SELECT * FROM tb_kategori");
+$kategori = query("SELECT * FROM tb_kategori");
 
 ?>
 
@@ -12,7 +12,7 @@ $isi = query("SELECT * FROM tb_kategori");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kategori Admin</title>
+    <title>Kategori</title>
 
     <!-- Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -104,13 +104,13 @@ $isi = query("SELECT * FROM tb_kategori");
 
     <!-- produk -->
     <div class="produk">
-        <?php foreach ($isi as $i) : ?>
+        <?php foreach ($kategori as $k) : ?>
             <div class="card cd">
-                <h5 class="card-title"><?= $i["nama_kategori"]; ?></h5>
-                <img src="../img/<?= $i["gambar"]; ?>" class="card-img-top">
+                <h5 class="card-title"><?= $k["nama_kategori"]; ?></h5>
+                <img src="../img/<?= $k["gambar"]; ?>" class="card-img-top">
                 <div class="card-body">
-                    <a href="detail.php?id=<?= $i['id']; ?>" class="btn ">Lihat Semua</a>
-                    <p class="card-text"><?= $i["deskripsi"]; ?></p>
+                    <a href="detail.php?id=<?= $k["id_kategori"]; ?>" class="btn ">Lihat Semua</a>
+                    <p class="card-text"><?= $k["deskripsi"] ?></p>
                 </div>
             </div>
         <?php endforeach; ?>

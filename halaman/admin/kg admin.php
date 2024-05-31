@@ -2,7 +2,7 @@
 
 require '../../functions/functions.php';
 
-$isi = query("SELECT * FROM tb_kategori");
+$kategori = query("SELECT * FROM tb_kategori");
 
 ?>
 
@@ -82,58 +82,44 @@ $isi = query("SELECT * FROM tb_kategori");
     </nav>
     <!-- nav end -->
 
-    <!-- Carousel -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <!-- carousel End -->
-
     <!-- Teks -->
-    <div class="teks">
-        <h1>All Kategori</h1>
+    <div class="tekss">
+        <h1>Daftar Kategori</h1>
     </div>
     </form>
     <!-- Teks End -->
 
     <!-- produk -->
-    <div class="produk">
-        <?php foreach ($isi as $i) : ?>
-            <div class="card cd">
-                <h5 class="card-title"><?= $i["nama_kategori"]; ?></h5>
-                <img src="../../img/<?= $i["gambar"]; ?>" class="card-img-top">
-                <div class="card-body">
-                    <a href="#" class="btn ">Lihat Semua</a>
-                    <p class="card-text"><?= $i["deskripsi"]; ?></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+    <div class="list">
+        <a href="tambah kg.php" class="btn btn-primary" style="margin-left: 30px; ">Tambah Data Kategori</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama Kategori</th>
+                    <th scope="col">Gambar</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1;
+                foreach ($kategori as $kg) : ?>
+                    <tr>
+                        <td><?= $i++; ?></td>
+                        <td class="td1"><?= $kg['nama_kategori']; ?></td>
+                        <td><img src="../../img/<?= $kg['gambar']; ?>" width="110"></td>
+                        <td><?= $kg['deskripsi']; ?></td>
+                        <td class="tombol">
+                            <a href="ubah kg.php?id=<?= $kg['id_kategori']; ?>" class="badge text-bg-warning text-decoration-none">Ubah</a>
+                            <a href="hapus kg.php?id=<?= $kg['id_kategori']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="badge text-bg-danger text-decoration-none">Hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
     <!-- Produk End -->
-
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>©ASUSTeK Computer Inc. All rights reserved</p>
-    </div>
-    <!-- Footer End -->
 
     <!-- Js BOxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

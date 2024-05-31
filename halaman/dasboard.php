@@ -40,16 +40,16 @@
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link a1" aria-current="page" href="login.php">Kategori</a>
+                        <a class="nav-link a1" aria-current="page" href="login.php">Kategori</a>
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link a1" aria-current="page" href="login.php">Produk</a>
+                        <a class="nav-link a1" aria-current="page" href="login.php">Produk</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <box-icon name='user'></box-icon>
+                            <box-icon name='user'></box-icon>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="login.php">Login</a></li>
@@ -85,27 +85,6 @@
         </button>
     </div>
     <!-- carousel End -->
-
-    <!-- Hero Section -->
-    <ul class="nav justify-content-center gap-5 kk">
-        <li class="nav-item ktg1">
-            <a class="nav-link sz1" aria-current="page" href="login.php"><img src="../img/Hero all series.jpeg" alt="1"></a>
-            <a class="series1" href="login.php">All Series</a>
-        </li>
-
-        <li class="nav-item ktg2">
-            <a class="nav-link sz2" aria-current="page" href="login.php"><img src="../img/vivobook s.jpg" alt="2"></a>
-            <a class="series2" href="login.php">Laptop Vivobook</a>
-            <p class="ts1">Perform in style</p>
-        </li>
-
-        <li class="nav-item ktg2">
-            <a class="nav-link sz3" aria-current="page" href="login.php"><img src="../img/expertbook advanced.jpg" alt="3"><a>
-                    <a class="series3" href="login.php">Laptop ExpertBook</a>
-                    <p class="ts3">Premium, thin, and light</p>
-        </li>
-    </ul>
-    <!-- Hero Section End -->
 
     <!-- Teks -->
     <div class="teks1">

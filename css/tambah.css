@@ -39,6 +39,7 @@ nav .collapse .dropdown-item {
 /* tambah */
 .tb {
   margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .tb h3 {
@@ -54,17 +55,3 @@ nav .collapse .dropdown-item {
   font-weight: 500;
 }
 /* tambah end */
-
-.list .table {
-  margin-top: 100px;
-  text-align: center;
-}
-
-.list .table .d2{
-  width: 300px;
-/* font-size: 10px; */
-}
-
-.list .table .tombol{
-width: 130px;
-}

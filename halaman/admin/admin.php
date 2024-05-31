@@ -74,36 +74,20 @@
     </nav>
     <!-- Navbar End -->
 
-    <!-- Carousel -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
+    <!-- lihat detail -->
+    <div class="lihat">
+        <div class="detail">
+            <i class='bx bxs-data'></i>
+            <a class="a1" href="tambah pd.php">Tambah Produk</a>
+            <a class="a2" href="pd admin.php">Lihat Produk</a>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <!-- carousel End -->
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>©ASUSTeK Computer Inc. All rights reserved</p>
+        <div class="detail">
+            <i class='bx bxs-data'></i>
+            <a class="a1" href="tambah kg.php">Tambah Kategori</a>
+            <a class="a2" href="tambah kg.php">Lihat Kategori</a>
+        </div>
     </div>
-    <!-- Footer End -->
-
     <!-- Js BOxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 

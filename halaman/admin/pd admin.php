@@ -79,77 +79,49 @@ $produk = query("SELECT * FROM tb_produk");
     </nav>
     <!-- nav end -->
 
-    <!-- carousel -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <!-- carousel end -->
-
     <!-- Teks -->
-    <div class="teks" id="all-series">
-        <h1>Rekomdasi Laptop Unggulan Dari Kami</h1>
-        <p>Laptop ASUS yang dirancang dengan presisi sesuai gaya kamu dan fitur modern untuk meningkatkan produktivitas kamu.</p>
+    <div class="tekss">
+        <h1>Daftar Produk</h1>
     </div>
     <!-- Teks End -->
 
     <!-- produk -->
-    <form action="" method="post">
-        <div class="card1" id="vivobook-s">
-            <?php foreach ($produk as $pro) : ?>
-                <div class="card cd1">
-                    <img src="../../img/<?= $pro["image"]; ?>" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-text"><?= $pro["ukuran"]  ?></p>
-                        <h5 class="card-title"><?= $pro["nama_produk"]  ?></h5>
-                    </div>
-                    <ul class="list-group list-group-flush ul1">
-                        <p class="p1">Harga Mulai</p>
-                        <h5 class="h52"><?= $pro["harga"]  ?></h5>
-                        <p class="p2">Harga ini mungkin tidak merujuk ke spesifikasi di bawah ini.</p>
-                    </ul>
-                    <ul class="list-group list-group-flush ul2">
-                        <li>
-                            <p class="p1"><?= $pro["deskripsi"]  ?></p>
-                        </li>
-                        <li>
-                            <?php
-                            $pro2 = $pro["deskripsi_2"];
-                            $pro_2 = explode(",", $pro2);
-                            ?>
-                            <?php foreach ($pro_2 as $proo) : ?>
-                                <p class="p2"><?= $proo; ?></p>
-                            <?php endforeach; ?>
-                        </li>
-                    </ul>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </form>
-    <!-- Produk End -->
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>©ASUSTeK Computer Inc. All rights reserved</p>
+    <div class="list">
+        <a href="tambah pd.php" class="btn btn-primary" style="margin-left: 30px; ">Tambah Data Produk</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Gambar</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Ukuran</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Deskripsi_2</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1;
+                foreach ($produk as $pro) : ?>
+                    <tr>
+                        <td><?= $i++; ?></td>
+                        <td><?= $pro['nama_produk']; ?></td>
+                        <td><img src="../../img/<?= $pro['image']; ?>" width="110"></td>
+                        <td><?= $pro['harga']; ?></td>
+                        <td><?= $pro['ukuran']; ?></td>
+                        <td><?= $pro['deskripsi']; ?></td>
+                        <td class="d2"><?= $pro['deskripsi_2']; ?></td>
+                        <td class="tombol">
+                            <a href="ubah pd.php?id=<?= $pro['id_produk']; ?>" class="badge text-bg-warning text-decoration-none">Ubah</a>
+                            <a href="hapus pd.php?id=<?= $pro['id_produk']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="badge text-bg-danger text-decoration-none">Hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
-    <!-- Footer End -->
+    <!-- Produk End -->
 
     <!-- Js BOxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

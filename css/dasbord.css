@@ -54,103 +54,9 @@ nav .collapse .dropdown-item {
 }
 /* navbar end */
 
-/* Hero */
-.kk {
-  border-bottom: 0.2rem solid gray;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
-  padding-top: 15px;
-  height: 248px;
-}
-
-.nav .ktg1::after {
-  content: "";
-  display: block;
-  margin-left: -2px;
-  padding-bottom: 4.1rem;
-  border-bottom: 0.2rem solid black;
-  transform: scaleX(0);
-  transition: 0.2s linear;
-}
-
-.nav .ktg1:hover::after {
-  transform: scaleX(0.5);
-}
-
-.nav .ktg2::after {
-  content: "";
-  display: block;
-  padding-bottom: 1.4rem;
-  border-bottom: 0.2rem solid black;
-  margin-left: 8px;
-  transform: scaleX(0);
-  transition: 0.2s linear;
-}
-
-.nav .ktg2:hover::after {
-  transform: scaleX(0.7);
-}
-
-.kk .nav-item .sz1 img {
-  width: 120px;
-  height: 120px;
-}
-
-.kk .nav-item .sz2 img {
-  width: 115px;
-  height: 115px;
-  margin-bottom: 5px;
-}
-
-.kk .nav-item .sz3 img {
-  width: 120px;
-  height: 120px;
-  margin-top: -3px;
-  margin-bottom: 3px;
-}
-
-.kk .nav-item .series1 {
-  margin-left: 41px;
-  text-decoration: none;
-  color: black;
-}
-
-.kk .nav-item .series2 {
-  margin-left: 15px;
-  text-decoration: none;
-  color: black;
-}
-
-.kk .nav-item .series3 {
-  margin-left: 15px;
-  text-decoration: none;
-  color: black;
-}
-
-.kk .nav-item .ts1 {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: 400;
-  margin-left: 27px;
-}
-
-.kk .nav-item .ts2 {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: 400;
-  margin-left: 15px;
-}
-
-.kk .nav-item .ts3 {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: 400;
-  margin-left: 10px;
-}
-/* Hero End */
-
 /* teks */
 .teks1 h1 {
-  margin-top: 100px;
+  margin-top: 60px;
   text-align: center;
   font-size: 35px;
   font-weight: 700;
@@ -205,3 +111,48 @@ nav .collapse .dropdown-item {
   text-align: center;
 }
 /* Footer End */
+
+
+/* CSS Admin */
+
+/* lihat detai */
+.detail {
+  background-color: #ddd;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 1);
+}
+
+.bxs-data {
+  font-size: 110px;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.detail .a1 {
+  position: absolute;
+  margin-top: 45px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.detail .a2 {
+  position: absolute;
+  margin-top: 90px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+/* lihat detai end */
+
+.lihat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  gap: 50px;
+}

@@ -3,22 +3,23 @@
 require '../../functions/functions.php';
 
 //Jika tombol tambah ditekan
-if (isset($_POST['tambah'])) {
-  //Jika data berhasil ditambahakan
-  if (tambah($_POST) > 0) {
+if (isset($_POST['submit'])) {
+
+  // Jika data berhasil ditambahakan
+  if (submit($_POST) > 0) {
     echo "<script>
-      alert('data berhasil ditambah!');
-      document.location.href = 'pd admin.php';
-    </script>";
+            alert('data berhasil ditambah!');
+            document.location.href = 'kg admin.php';
+        </script>";
   } else {
     echo "<script>
-    alert('data gagal ditambah!');
-    document.location.href = 'tambah pd.php';
-</script>";
+            alert('data gagal ditambah!');
+            document.location.href = 'tambah kg.php';
+          </script>";
   }
 }
 
-// $produk = query("SELECT * FROM tb_produk");
+
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +28,9 @@ if (isset($_POST['tambah'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tambah Produk</title>
+  <title>Tambah Kategori</title>
 
   <!-- link css -->
-  <!-- <link rel="stylesheet" href="../../css/tambah.css"> -->
   <link rel="stylesheet" href="../../css/tambah.css">
 
   <!-- Link Bootsrap -->
@@ -54,27 +54,35 @@ if (isset($_POST['tambah'])) {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <box-icon type='solid' name='user-check'></box-icon>
+              <box-icon name='menu'></box-icon>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Tambah Produk</a></li>
+              <li><a class="dropdown-item" href="#">Tambah Kategori</a></li>
               <li><a class="dropdown-item" href="dasboard.php">Kelola User</a></li>
-              <li><a class="dropdown-item" href="dasboard.php">Tambah Kategori</a></li>
-              <li><a class="dropdown-item" href="dasboard.php">Log Out</a></li>
+              <li><a class="dropdown-item" href="tambah pd.php">Tambah Produk</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link a1" aria-current="page" href="dasboard utama.php">Home</a>
+            <a class="nav-link a1" aria-current="page" href="../admin/admin.php">Home</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link a1" aria-current="page" href="../admin/kg admin.php">Kategori </a>
+          </li>
+
 
           <li class="nav-item">
             <a class="nav-link a1" aria-current="page" href="../admin/pd admin.php">Produk </a>
           </li>
 
-
-          <li class="nav-item">
-            <a class="nav-link a1" aria-current="page" href="kategori.php">Kategori </a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <box-icon type='solid' name='user-check'></box-icon>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dasboard.php">Log Out</a></li>
+            </ul>
           </li>
 
         </ul>
@@ -85,33 +93,26 @@ if (isset($_POST['tambah'])) {
 
   <!-- tabel -->
   <div class="container col-6 tb">
-    <h3 class="h3">Tambah Daftar Produk</h3>
-    <form action="" method="POST">
+    <h3 class="h3">Tambah Daftar Kategori</h3>
+
+    <form action="" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
-        <label for="nama" class="form-label">Nama Produk</label>
+        <label for="nama" class="form-label">Id Kategori</label>
+        <input type="text" class="form-control" id="id" name="id" required>
+      </div>
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Kategori</label>
         <input type="text" class="form-control" id="nama" name="nama" required>
-      </div>
-      <div class="mb-3">
-        <label for="nama" class="form-label">Harga</label>
-        <input type="text" class="form-control" id="harga" name="harga" required>
-      </div>
-      <div class="mb-3">
-        <label for="nama" class="form-label">Ukuran</label>
-        <input type="text" class="form-control" id="ukuran" name="ukuran" required>
       </div>
       <div class="mb-3">
         <label for="nama" class="form-label">Deskripsi</label>
         <input type="text" class="form-control" id="deskripsi" name="deskripsi" required>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi 2</label>
-        <input type="text" class="form-control" id="deskripsi2" name="deskripsi2" required>
+        <label for="nama" class="form-label"><i class='bx bxs-folder-open fs-2'></i></label>
+        <input type="file" class="form-control-file" id="gambar" name="gambar">
       </div>
-      <div class="mb-3">
-        <label for="nama" class="form-label">Gambar</label>
-        <input type="file" class="form-control-file" id="gambar" name="gambar" required>
-      </div>
-      <button type="submit" name="tambah" class="btn btn-primary">tambah data</button>
+      <button type="submit" name="submit" class="btn btn-primary">tambah data</button>
     </form>
   </div>
   <!-- tabel End -->
