@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+  header("location: login.php");
+  exit;
+}
 
 require '../functions/functions.php';
 
@@ -36,18 +41,18 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="container-fluid srh">
-        <form class="d-flex" role="search">
-          <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn" type="submit">Search</button>
-        </form>
-      </div>
+      <!-- <div class="container-fluid srh"> -->
+        <!-- <form class="d-flex" role="search"> -->
+          <!-- <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search"> -->
+          <!-- <button class="btn" type="submit">Search</button> -->
+        <!-- </form> -->
+      <!-- </div> -->
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto gap-3">
 
           <li class="nav-item">
-            <a class="nav-link a1" aria-current="page" href="dasboard utama.php">Home</a>
+            <a class="nav-link a1" aria-current="page" href="dasboard.php">Home</a>
           </li>
 
           <li class="nav-item">
@@ -64,7 +69,7 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
               <box-icon type='solid' name='user'></box-icon>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="dasboard.php">Log Out</a></li>
+              <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
             </ul>
           </li>
 
@@ -75,27 +80,7 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
   <!-- nav end -->
 
   <!-- Carousel -->
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  <?php require "carousel.php"; ?>
   <!-- carousel End -->
 
   <!-- Teks -->
@@ -144,11 +129,9 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
   </div>
   <!-- button End -->
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>©ASUSTeK Computer Inc. All rights reserved</p>
-  </div>
-  <!-- Footer End -->
+  <!-- footer -->
+  <?php require "footer.php"; ?>
+  <!-- footer end -->
 
   <!-- Js BOxicons -->
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

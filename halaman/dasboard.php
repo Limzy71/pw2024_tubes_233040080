@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+require '../functions/functions.php';
+
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -26,13 +37,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="container-fluid srh">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">Search</button>
-                </form>
-            </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
                     <li class="nav-item">
@@ -40,20 +44,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="login.php">Kategori</a>
+                        <a class="nav-link a1" aria-current="page" href="kategori.php">Kategori</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="login.php">Produk</a>
+                        <a class="nav-link a1" aria-current="page" href="produk.php">Produk </a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon name='user'></box-icon>
+                            <box-icon type='solid' name='user'></box-icon>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="login.php">Login</a></li>
-                            <li><a class="dropdown-item" href="register.php">Register</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                     </li>
 
                 </ul>
@@ -63,27 +66,7 @@
     <!-- Navbar End -->
 
     <!-- Carousel -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../img/carousel 1.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../img/carousel 2.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-            <div class="carousel-item">
-                <img src="../img/carousel 3.jpg" class="d-block w-100" style="height: 576px;">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    <?php require "carousel.php"; ?>
     <!-- carousel End -->
 
     <!-- Teks -->
@@ -109,11 +92,9 @@
     </div>
     <!-- Gambar End -->
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>©ASUSTeK Computer Inc. All rights reserved</p>
-    </div>
-    <!-- Footer End -->
+    <!-- footer -->
+    <?php require "footer.php"; ?>
+    <!-- footer end -->
 
     <!-- Js BOxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

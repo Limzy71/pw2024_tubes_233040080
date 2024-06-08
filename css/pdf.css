@@ -1,0 +1,39 @@
+.teks {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.table .nm {
+  width: 170px;
+  text-align: center;
+}
+
+.table .no, .ds {
+  text-align: center;
+}
+
+.table .gm {
+  width: 150px;
+  text-align: center;
+}
+
+.table .nmk, .dsk {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.table tr {
+  border: 1px solid black;
+}
+
+.table th {
+  border: 1px solid black;
+}
+
+.table td {
+  border: 1px solid black;
+}
+
+
+

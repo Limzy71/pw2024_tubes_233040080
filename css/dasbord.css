@@ -112,47 +112,78 @@ nav .collapse .dropdown-item {
 }
 /* Footer End */
 
-
 /* CSS Admin */
 
 /* lihat detai */
+.lihat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+  gap: 50px;
+}
+
 .detail {
   background-color: #ddd;
-  width: 250px;
-  height: 150px;
+  width: 300px;
+  height: 180px;
   border-radius: 15px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 1);
 }
 
-.bxs-data {
-  font-size: 110px;
+.bx-package,
+.bx-box,
+.bxs-user-account {
+  font-size: 150px;
   margin-left: 5px;
   margin-top: 20px;
 }
 
 .detail .a1 {
   position: absolute;
-  margin-top: 45px;
+  margin-top: 75px;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
+  margin-left: 5px;
 }
 
 .detail .a2 {
   position: absolute;
-  margin-top: 90px;
+  margin-top: 110px;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.detail .a3 {
+  position: absolute;
+  margin-top: 75px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.detail .a4 {
+  position: absolute;
+  margin-top: 110px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.detail .a5 {
+  margin-left: 20px;
+  position: absolute;
+  margin-top: 80px;
+  color: #000;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
 }
 /* lihat detai end */
-
-.lihat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 150px;
-  gap: 50px;
-}

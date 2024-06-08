@@ -41,15 +41,15 @@ if (isset($_POST["submit"])) {
                     <header>Sign Up</header>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Username" name="username" id="username" required>
+                    <input type="text" class="input-field" placeholder="Username" name="username" id="username" autofocus autocomplete="off" required>
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Email" name="email" id="email" required>
+                    <input type="text" class="input-field" placeholder="Email" name="email" id="email" autocomplete="off" required>
                     <i class="bx bx-envelope"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password" name="password" id="password" required>
+                    <input type="password" class="input-field" placeholder="Password" name="password" id="password" autocomplete="off" required>
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">

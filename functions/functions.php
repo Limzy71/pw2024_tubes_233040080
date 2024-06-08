@@ -11,11 +11,6 @@ function query($query)
 
   $result = mysqli_query($conn, $query);
 
-  // jika hasilnya hanya 1 data
-  if (mysqli_num_rows($result) == 1) {
-    return mysqli_fetch_assoc($result);
-  }
-
   $rows = [];
   while ($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row;
@@ -24,7 +19,7 @@ function query($query)
   return $rows;
 }
 
-// Function pada tambah produk
+// Function tambah produk
 function tambah($data)
 {
   $conn = koneksi();
@@ -48,52 +43,6 @@ function tambah($data)
             (null, '$id', '$nama', '$ukuran', '$harga', '$deskripsi', '$deskripsi2', '$gambar')
     ";
   mysqli_query($conn, $query);
-
-  return mysqli_affected_rows($conn);
-}
-
-// Function pada tambah kategori
-function submit($data)
-{
-  $conn = koneksi();
-
-  $id = $data['id'];
-  $nama = $data['nama'];
-
-  // upload gambar
-  $gambar = upload();
-  if (!$gambar) {
-    return false;
-  }
-
-  $deskripsi = $data['deskripsi'];
-
-  $query = "INSERT INTO 
-          tb_kategori
-        VALUES
-          ('$id', '$nama', '$gambar', '$deskripsi')
-  ";
-  mysqli_query($conn, $query);
-
-  return mysqli_affected_rows($conn);
-}
-
-// function hapus produk
-function hapus($id)
-{
-  $conn = koneksi();
-
-  mysqli_query($conn, "DELETE FROM tb_produk WHERE id_produk = $id");
-
-  return mysqli_affected_rows($conn);
-}
-
-// function hapus kategori
-function hapus2($id)
-{
-  $conn = koneksi();
-
-  mysqli_query($conn, "DELETE FROM tb_kategori WHERE id_kategori = $id");
 
   return mysqli_affected_rows($conn);
 }
@@ -135,6 +84,41 @@ function ubah($data)
   return mysqli_affected_rows($conn);
 }
 
+// function hapus produk
+function hapus($id)
+{
+  $conn = koneksi();
+
+  mysqli_query($conn, "DELETE FROM tb_produk WHERE id_produk = $id");
+
+  return mysqli_affected_rows($conn);
+}
+
+// Function tambah kategori
+function submit($data)
+{
+  $conn = koneksi();
+
+  $nama = $data['nama'];
+
+  // upload gambar
+  $gambar = upload();
+  if (!$gambar) {
+    return false;
+  }
+
+  $deskripsi = $data['deskripsi'];
+
+  $query = "INSERT INTO 
+          tb_kategori
+        VALUES
+          (null, '$nama', '$gambar', '$deskripsi')
+  ";
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}
+
 // ubah data kategori
 function ubah2($data)
 {
@@ -165,7 +149,27 @@ function ubah2($data)
   return mysqli_affected_rows($conn);
 }
 
-// fungsi upload
+// function hapus kategori
+function hapus2($id)
+{
+  $conn = koneksi();
+
+  mysqli_query($conn, "DELETE FROM tb_kategori WHERE id_kategori = $id");
+
+  return mysqli_affected_rows($conn);
+}
+
+// function hapus user
+function hapus3($id)
+{
+  $conn = koneksi();
+
+  mysqli_query($conn, "DELETE FROM user WHERE id_user = $id");
+
+  return mysqli_affected_rows($conn);
+}
+
+// function upload
 function upload()
 {
   $namaFile = $_FILES["gambar"]['name'];
@@ -212,15 +216,81 @@ function upload()
   return $namaFileBaru;
 }
 
+// function search produk user
+function cari($keyword)
+{
+
+  $query = "SELECT * FROM tb_produk 
+            WHERE
+              nama_produk LIKE '%$keyword%' OR
+              ukuran LIKE '%$keyword%' OR
+              harga LIKE '%$keyword%'
+            ";
+
+  return query($query);
+}
+
+// function search kategori user
+function search($kunci)
+{
+
+  $query = "SELECT * FROM tb_kategori 
+          WHERE
+            nama_kategori LIKE '%$kunci%'
+          ";
+
+  return query($query);
+}
+
+// function search produk admin
+function pilih($keyword)
+{
+
+  $query = "SELECT * FROM tb_produk
+            WHERE
+              nama_produk LIKE '%$keyword%' OR
+              ukuran LIKE '%$keyword%' OR
+              harga LIKE '%$keyword%'
+            ";
+
+  return query($query);
+}
+
+// function search kategori admin
+function pilih2($keyword)
+{
+
+  $query = "SELECT * FROM tb_kategori
+            WHERE
+              nama_kategori LIKE '%$keyword%'
+            ";
+
+  $result = query($query);
+  return $result;
+}
+
+// function search kelola user admin
+function pilih3($keyword)
+{
+
+  $query = "SELECT * FROM user
+            WHERE
+              username LIKE '%$keyword%' OR
+              role LIKE '%$keyword%'
+            ";
+
+  return query($query);
+}
+
 // Registrasi
 function Registrasi($data)
 {
   $conn = koneksi();
 
   // variabel data
-  $username = strtolower(stripslashes($data["username"]));
-  $password = mysqli_real_escape_string($conn, $data["password"]);
-  $email = strtolower($data["email"]);
+  $username = htmlspecialchars(strtolower($data["username"]));
+  $password = htmlspecialchars(mysqli_real_escape_string($conn, $data["password"]));
+  $email = htmlspecialchars(strtolower($data["email"]));
 
   // cek username udah ada atau belum
   $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
@@ -237,7 +307,7 @@ function Registrasi($data)
 
   //tambah user baru ke DB
   $query = "INSERT INTO
-              user
+              user (id_user, username, password, email)
             VALUES
             (null, '$username', '$password', '$email')
             ";
@@ -251,6 +321,7 @@ function Registrasi($data)
 function login($data)
 {
   $conn = koneksi();
+  // session_start();
 
   $username = $data["username"];
   $password = $data["password"];
@@ -263,8 +334,21 @@ function login($data)
     // cek password
     $row = mysqli_fetch_assoc($result);
     if (password_verify($password, $row["password"])) {
-      header("location: dasboard utama.php");
-      exit;
+
+      // Set session
+      $_SESSION["login"] = true;
+      $_SESSION["username"] = $username;
+
+      // Remember me
+
+      $role = query("SELECT * FROM user WHERE username = '$username'")[0]["role"];
+      $_SESSION["role"] = $role;
+
+      if ($role === "admin") {
+        header("location: ../halaman/admin/admin.php");
+      } else {
+        header("location: ../halaman/dasboard.php");
+      }
     }
   }
 }

@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location: ../login.php");
+    exit;
+}
+
+if ($_SESSION["role"] !== "admin") {
+    header("location: ../dasboard.php");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -26,13 +39,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="container-fluid srh">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">Search</button>
-                </form>
-            </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
 
@@ -41,9 +47,9 @@
                             <box-icon name='menu'></box-icon>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="kelola user.php">Kelola User</a></li>
-                            <li><a class="dropdown-item" href="tambah pd.php">Tambah Produk</a></li>
-                            <li><a class="dropdown-item" href="tambah kg.php">Tambah Kategori</a></li>
+                            <li><a class="dropdown-item" href="kelola_user.php">Kelola User</a></li>
+                            <li><a class="dropdown-item" href="tambah_pd.php">Tambah Produk</a></li>
+                            <li><a class="dropdown-item" href="tambah_kg.php">Tambah Kategori</a></li>
                         </ul>
                     </li>
 
@@ -52,11 +58,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="kg admin.php">Kategori</a>
+                        <a class="nav-link a1" aria-current="page" href="kg_admin.php">Kategori</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link a1" aria-current="page" href="pd admin.php">Produk </a>
+                        <a class="nav-link a1" aria-current="page" href="pd_admin.php">Produk </a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -64,7 +70,7 @@
                             <box-icon type='solid' name='user-check'></box-icon>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dasboard.php">Log Out</a></li>
+                            <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
                         </ul>
                     </li>
 
@@ -76,17 +82,24 @@
 
     <!-- lihat detail -->
     <div class="lihat">
+
         <div class="detail">
-            <i class='bx bxs-data'></i>
-            <a class="a1" href="tambah pd.php">Tambah Produk</a>
-            <a class="a2" href="pd admin.php">Lihat Produk</a>
+            <i class='bx bxs-user-account'></i>
+            <a class="a5" href="kelola_user.php">Lihat User</a>
         </div>
 
         <div class="detail">
-            <i class='bx bxs-data'></i>
-            <a class="a1" href="tambah kg.php">Tambah Kategori</a>
-            <a class="a2" href="tambah kg.php">Lihat Kategori</a>
+            <i class='bx bx-box'></i>
+            <a class="a3" href="tambah_kg.php">Tambah Kategori</a>
+            <a class="a4" href="kg_admin.php">Lihat Kategori</a>
         </div>
+
+        <div class="detail">
+            <i class='bx bx-package'></i>
+            <a class="a1" href="tambah_pd.php">Tambah Produk</a>
+            <a class="a2" href="pd_admin.php">Lihat Produk</a>
+        </div>
+
     </div>
     <!-- Js BOxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

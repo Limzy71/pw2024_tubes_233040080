@@ -1,11 +1,19 @@
 <?php
 require '../functions/functions.php';
 
+session_start();
+
+if (isset($_SESSION["login"])) {
+  header("location: dasboard.php");
+  exit;
+}
+
 if (isset($_POST["login"])) {
-  login($_POST);
+  $role = login($_POST);
 
   $error = true;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +36,7 @@ if (isset($_POST["login"])) {
   <form action="" method="post">
     <div class="form-box">
       <!-- Login Form -->
-      <div class="login-container" id="login">
+      <div class="login-container">
         <div class="top">
           <span>Don't have an account? <a href="register.php">Sign Up</a></span>
           <?php if (isset($error)) : ?>
@@ -37,11 +45,11 @@ if (isset($_POST["login"])) {
           <header>Login</header>
         </div>
         <div class="input-box">
-          <input type="text" class="input-field" placeholder="Username" name="username" id="username" required>
+          <input type="text" class="input-field" placeholder="Username" name="username" id="username" autofocus autocomplete="off" required>
           <i class="bx bx-user"></i>
         </div>
         <div class="input-box">
-          <input type="password" class="input-field" placeholder="Password" name="password" id="password" required>
+          <input type="password" class="input-field" placeholder="Password" name="password" id="password" autocomplete="off" required>
           <i class="bx bx-lock-alt"></i>
         </div>
         <div class="input-box">
@@ -49,7 +57,7 @@ if (isset($_POST["login"])) {
         </div>
         <div class="two-col">
           <div class="one">
-            <input type="checkbox" id="login-check">
+            <input type="checkbox" id="login-check" name="remember">
             <label for="login-check"> Remember Me</label>
           </div>
           <div class="two">

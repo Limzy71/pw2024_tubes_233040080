@@ -44,10 +44,11 @@ body {
 }
 
 .login-container .top h5 {
-  font-size: 15px;
+  font-size: 17px;
   text-align: center;
   color: red;
   font-style: italic;
+  text-shadow: 0 0 20px #fff;
 }
 /* Login End */
 
