@@ -2,7 +2,8 @@
 
 function koneksi()
 {
-  return mysqli_connect('localhost', 'id22300754_limzy', '#Pomalaa4', 'id22300754_pw2024_tubes_233040080');
+  // return mysqli_connect('localhost', 'id22300754_limzy', '#Pomalaa4', 'id22300754_pw2024_tubes_233040080');
+  return mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040080');
 }
 
 function query($query)
