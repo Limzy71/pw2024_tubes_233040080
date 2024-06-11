@@ -5,7 +5,6 @@
 }
 
 body {
-  /* height: 2500px; */
   overflow-x: hidden;
 }
 
@@ -53,5 +52,13 @@ nav .collapse .dropdown-item {
 .tb form label {
   font-size: 15px;
   font-weight: 500;
+}
+
+.tb .folder {
+  margin-top: 20px;
+}
+
+.tb button {
+  margin-top: 8px;
 }
 /* tambah end */

@@ -2,7 +2,6 @@
 
 * {
   scroll-behavior: smooth;
-  list-style: none;
 }
 
 body {
@@ -76,7 +75,7 @@ nav .collapse .dropdown-item {
 /* Produk */
 .card1 {
   width: 90%;
-  margin: 60px auto;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 20px 91px;
@@ -136,12 +135,12 @@ nav .collapse .dropdown-item {
 }
 /*  */
 .card1 .cd1 .ul2 li {
-  margin-left: 17px;
+  margin-left: 33px;
   font-size: 13px;
 }
 
 .card1 .cd1 .ul2 li .p1 {
-  margin-top: 15px;
+  margin-top: 16px;
   font-size: 15px;
   color: #000;
 }
@@ -169,8 +168,13 @@ nav .collapse .dropdown-item {
   text-align: center;
 }
 
+.list .table .d1 {
+  text-align: justify;
+}
+
 .list .table .d2 {
   width: 400px;
+  text-align: justify;
 }
 
 .list .table .tombol {

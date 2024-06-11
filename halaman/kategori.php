@@ -73,7 +73,7 @@ if (isset($_POST["search"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user'></box-icon>
+                            <i class='bx bxs-user fs-4'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
@@ -104,7 +104,7 @@ if (isset($_POST["search"])) {
                 <img src="../img/<?= $k["gambar"]; ?>" class="card-img-top">
                 <div class="card-body">
                     <a href="detail.php?id=<?= $k["id_kategori"]; ?>" class="btn ">Lihat Semua</a>
-                    <p class="card-text"><?= $k["deskripsi"] ?></p>
+                    <p class="card-text"><?= $k["deskripsi_kg"] ?></p>
                 </div>
             </div>
         <?php endforeach; ?>

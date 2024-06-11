@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url(../img/bg\ login.jpg);
+  background-image: url(../img/bg\ asus.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -16,7 +16,7 @@ body {
 
 .form-box {
   background: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-radius: 20px;
   box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.7);
   position: relative;
@@ -48,7 +48,6 @@ body {
   text-align: center;
   color: red;
   font-style: italic;
-  text-shadow: 0 0 20px #fff;
 }
 /* Login End */
 
@@ -121,36 +120,14 @@ header {
   border: none;
   border-radius: 30px;
   outline: none;
-  background-color: #006ce1;
+  background-color: #000f5c;
+  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
 .submit:hover {
   color: #ddd;
-  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
-}
-
-.two-col {
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-size: small;
-  margin-top: 25px;
-}
-
-.two-col .one {
-  display: flex;
-  gap: 5px;
-}
-
-.two label a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.two label a:hover {
-  text-decoration: underline;
 }
 /* Login dan Regist End */
 

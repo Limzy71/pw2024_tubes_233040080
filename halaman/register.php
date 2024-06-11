@@ -5,12 +5,13 @@ require '../functions/functions.php';
 if (isset($_POST["submit"])) {
     if (registrasi($_POST) > 0) {
         echo "<script>
-            alert('Akun Anda berhasil dibuat');
+            alert('Akun Anda berhasil dibuat!');
             document.location.href = 'login.php';
             </script>";
     } else {
         echo "<script>
-        alert('Akun Anda gagal dibuat');
+        alert('Akun Anda gagal dibuat!');
+            document.location.href = 'register.php';
         </script>";
     }
 }
@@ -54,15 +55,6 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div class="input-box">
                     <button class="submit" type="submit" name="submit">Submit</button>
-                </div>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="register-check">
-                        <label for="register-check"> Remember Me</label>
-                    </div>
-                    <div class="two">
-                        <label><a href="#">Terms & conditions</a></label>
-                    </div>
                 </div>
             </div>
         </div>

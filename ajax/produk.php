@@ -6,8 +6,7 @@ $keyword = $_GET["keyword"];
 $query = "SELECT * FROM tb_produk 
             WHERE
               nama_produk LIKE '%$keyword%' OR
-              ukuran LIKE '%$keyword%' OR
-              harga LIKE '%$keyword%'
+              ukuran LIKE '%$keyword%'
           ";
 
 $produk = query($query);
@@ -30,15 +29,15 @@ $produk = query($query);
       <li>
         <p class="p1"><?= $pro["deskripsi"]  ?></p>
       </li>
-      <li>
-        <?php
-        $pro2 = $pro["deskripsi_2"];
-        $pro_2 = explode(",", $pro2);
-        ?>
-        <?php foreach ($pro_2 as $proo) : ?>
+      <?php
+      $pro2 = $pro["deskripsi_2"];
+      $pro_2 = explode(",", $pro2);
+      ?>
+      <?php foreach ($pro_2 as $proo) : ?>
+        <li>
           <p class="p2"><?= $proo; ?></p>
-        <?php endforeach; ?>
-      </li>
+        </li>
+      <?php endforeach; ?>
     </ul>
   </div>
 <?php endforeach; ?>

@@ -53,7 +53,7 @@ if (!isset($_SESSION["login"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user'></box-icon>
+                            <i class='bx bxs-user fs-4'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="logout.php">Log Out</a></li>

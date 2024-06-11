@@ -2,7 +2,7 @@
 
 function koneksi()
 {
-  return mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040080');
+  return mysqli_connect('localhost', 'id22300754_limzy', '#Pomalaa4', 'id22300754_pw2024_tubes_233040080');
 }
 
 function query($query)
@@ -140,7 +140,7 @@ function ubah2($data)
   // query kategori
   $queryy = "UPDATE tb_kategori SET
       nama_kategori = '$nama',
-      deskripsi = '$deskripsi',
+      deskripsi_kg = '$deskripsi',
       gambar = '$gambar'
     WHERE id_kategori = $id
     ";
@@ -223,8 +223,7 @@ function cari($keyword)
   $query = "SELECT * FROM tb_produk 
             WHERE
               nama_produk LIKE '%$keyword%' OR
-              ukuran LIKE '%$keyword%' OR
-              harga LIKE '%$keyword%'
+              ukuran LIKE '%$keyword%'
             ";
 
   return query($query);
@@ -297,7 +296,23 @@ function Registrasi($data)
 
   if (mysqli_fetch_assoc($result)) {
     echo "<script>
-          alert('username telah terdaftar')
+          alert('username telah terdaftar!')
+          </script>";
+    return false;
+  }
+
+  // jika username diatas 10 huruf
+  if (strlen($username) > 10) {
+    echo "<script>
+          alert('username terlalu panjang!');
+          </script>";
+    return false;
+  }
+
+  // jika password dibawah 5 digit
+  if (strlen($password) < 5) {
+    echo "<script>
+          alert('Password terlalu pendek!');
           </script>";
     return false;
   }
@@ -321,7 +336,6 @@ function Registrasi($data)
 function login($data)
 {
   $conn = koneksi();
-  // session_start();
 
   $username = $data["username"];
   $password = $data["password"];

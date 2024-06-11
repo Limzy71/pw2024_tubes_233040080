@@ -88,7 +88,7 @@ if ($_SESSION["role"] !== "admin") {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <box-icon type='solid' name='user-check'></box-icon>
+              <i type='solid' class='bx bxs-user-check fs-3'></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
@@ -108,11 +108,11 @@ if ($_SESSION["role"] !== "admin") {
     <form action="" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Kategori</label>
-        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
+        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" autofocus required>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" autocomplete="off" required>
+        <label class="form-label">Deskripsi</label>
+        <textarea class="form-control" name="deskripsi" rows="5" autocomplete="off" required></textarea>
       </div>
       <div class="mb-3">
         <label for="nama" class="form-label"><i class='bx bxs-folder-open fs-2'></i></label>

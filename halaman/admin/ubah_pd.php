@@ -85,7 +85,7 @@ if ($_SESSION["role"] !== "admin") {
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <box-icon type='solid' name='user-check'></box-icon>
+              <i type='solid' class='bx bxs-user-check fs-3'></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
@@ -124,12 +124,12 @@ if ($_SESSION["role"] !== "admin") {
         <input type="text" class="form-control" id="ukuran" name="ukuran" value="<?= $produk['ukuran']; ?>" autocomplete="off" required>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= $produk['deskripsi']; ?>" autocomplete="off" required>
+        <label class="form-label">Deskripsi</label>
+        <textarea class="form-control" name="deskripsi" rows="5" autocomplete="off" required><?= $produk['deskripsi'] ?></textarea>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi 2</label>
-        <input type="text" class="form-control" id="deskripsi2" name="deskripsi2" value="<?= $produk['deskripsi_2']; ?>" autocomplete="off" required>
+        <label class="form-label">Deskripsi 2</label>
+        <textarea class="form-control" name="deskripsi2" rows="6" autocomplete="off" required><?= $produk['deskripsi_2'] ?></textarea>
       </div>
       <div class="mb-3">
         <label for="nama" class="form-label"><i class='bx bxs-folder-open fs-1'></i></label>

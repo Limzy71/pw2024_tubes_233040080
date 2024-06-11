@@ -77,7 +77,7 @@ if (isset($_POST["pilih"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user-check'></box-icon>
+                            <i type='solid' class='bx bxs-user-check fs-3'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
@@ -123,7 +123,7 @@ if (isset($_POST["pilih"])) {
                         <td><?= $i++; ?></td>
                         <td class="td1"><?= $kg['nama_kategori']; ?></td>
                         <td><img src="../../img/<?= $kg['gambar']; ?>" width="110"></td>
-                        <td><?= $kg['deskripsi']; ?></td>
+                        <td><?= $kg['deskripsi_kg']; ?></td>
                         <td class="tombol">
                             <a href="ubah_kg.php?id=<?= $kg['id_kategori']; ?>" class="badge text-bg-warning text-decoration-none">Ubah</a>
                             <a href="hapus_kg.php?id=<?= $kg['id_kategori']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="badge text-bg-danger text-decoration-none">Hapus</a>

@@ -55,15 +55,6 @@ if (isset($_POST["login"])) {
         <div class="input-box">
           <button class="submit" type="submit" name="login">Submit</button>
         </div>
-        <div class="two-col">
-          <div class="one">
-            <input type="checkbox" id="login-check" name="remember">
-            <label for="login-check"> Remember Me</label>
-          </div>
-          <div class="two">
-            <label><a href="#">Forgot password?</a></label>
-          </div>
-        </div>
       </div>
     </div>
   </form>

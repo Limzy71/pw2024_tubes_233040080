@@ -22,9 +22,9 @@ if (isset($_POST['tambah'])) {
 $kategori = query("SELECT * FROM tb_kategori");
 
 session_start();
-  if (!isset($_SESSION["login"])) {
-    header("location: ../login.php");
-    exit;
+if (!isset($_SESSION["login"])) {
+  header("location: ../login.php");
+  exit;
 }
 
 if ($_SESSION["role"] !== "admin") {
@@ -89,7 +89,7 @@ if ($_SESSION["role"] !== "admin") {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <box-icon type='solid' name='user-check'></box-icon>
+              <i type='solid' class='bx bxs-user-check fs-3'></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
@@ -106,7 +106,7 @@ if ($_SESSION["role"] !== "admin") {
   <div class="container col-6 tb">
     <h3 class="h3">Tambah Daftar Produk</h3>
     <form action="" method="POST" enctype="multipart/form-data">
-      
+
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Kategori</label>
         <select type="text" class="form-control" id="nama_kategori" name="nama_kategori" required>
@@ -117,7 +117,7 @@ if ($_SESSION["role"] !== "admin") {
       </div>
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Produk</label>
-        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
+        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" autofocus required>
       </div>
       <div class="mb-3">
         <label for="nama" class="form-label">Harga</label>
@@ -128,14 +128,14 @@ if ($_SESSION["role"] !== "admin") {
         <input type="text" class="form-control" id="ukuran" name="ukuran" autocomplete="off" required>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" autocomplete="off" required>
+        <label class="form-label">Deskripsi</label>
+        <textarea class="form-control" name="deskripsi" rows="5" autocomplete="off" required></textarea>
       </div>
       <div class="mb-3">
-        <label for="nama" class="form-label">Deskripsi 2</label>
-        <input type="text" class="form-control" id="deskripsi2" name="deskripsi2" autocomplete="off" required>
+        <label class="form-label">Deskripsi 2</label>
+        <textarea class="form-control" name="deskripsi2" rows="7" autocomplete="off" required></textarea>
       </div>
-      <div class="mb-3">
+      <div class="mb-3 folder">
         <label for="nama" class="form-label"><i class='bx bxs-folder-open fs-2'></i></label>
         <input type="file" class="form-control-file" id="gambar" name="gambar">
       </div>

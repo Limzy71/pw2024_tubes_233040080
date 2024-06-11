@@ -41,12 +41,6 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- <div class="container-fluid srh"> -->
-        <!-- <form class="d-flex" role="search"> -->
-          <!-- <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search"> -->
-          <!-- <button class="btn" type="submit">Search</button> -->
-        <!-- </form> -->
-      <!-- </div> -->
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto gap-3">
@@ -66,7 +60,8 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <box-icon type='solid' name='user'></box-icon>
+              <i class='bx bxs-user fs-4'></i>
+
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
@@ -108,19 +103,20 @@ $ktg = query("SELECT * FROM tb_produk WHERE id_kategori = $id");
           <li>
             <p class="p1"><?= $k["deskripsi"];  ?></p>
           </li>
-          <li>
-            <?php
-            $ktg2 = $k["deskripsi_2"];
-            $ktg2 = explode(",", $ktg2);
-            ?>
-            <?php foreach ($ktg2 as $kt) : ?>
+          <?php
+          $ktg2 = $k["deskripsi_2"];
+          $ktg2 = explode(",", $ktg2);
+          ?>
+          <?php foreach ($ktg2 as $kt) : ?>
+            <li>
               <p class="p2"><?= $kt; ?></p>
-            <?php endforeach; ?>
-          </li>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     <?php endforeach; ?>
   </div>
+
   <!-- Produk End -->
 
   <!-- button -->

@@ -76,7 +76,7 @@ if (isset($_POST["pilih"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user-check'></box-icon>
+                            <i type='solid' class='bx bxs-user-check fs-3'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>
@@ -127,16 +127,15 @@ if (isset($_POST["pilih"])) {
                         <td><img src="../../img/<?= $pro['image']; ?>" width="110"></td>
                         <td><?= $pro['harga']; ?></td>
                         <td><?= $pro['ukuran']; ?></td>
-                        <td><?= $pro['deskripsi']; ?></td>
+                        <td class="d1"> • <?= $pro['deskripsi']; ?></td>
                         <td class="d2">
                             <?php
                             $pro2 = $pro["deskripsi_2"];
                             $pro_2 = explode(",", $pro2);
                             ?>
                             <?php foreach ($pro_2 as $proo) : ?>
-                                <p><?= $proo; ?></p>
+                                <p> • <?= $proo; ?> </p>
                             <?php endforeach; ?>
-                            <!-- <?= $pro['deskripsi_2']; ?> -->
                         </td>
                         <td class="tombol">
                             <a href="ubah_pd.php?id=<?= $pro['id_produk']; ?>" class="badge text-bg-warning text-decoration-none">Ubah</a>

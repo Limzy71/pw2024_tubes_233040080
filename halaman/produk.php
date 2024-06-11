@@ -9,10 +9,24 @@ if (!isset($_SESSION["login"])) {
 
 $produk = query("SELECT * FROM tb_produk");
 
+// $kategori = query("SELECT * FROM tb_kategori");
+
 // tombol search di klik
 if (isset($_POST["cari"])) {
     $produk = cari($_POST['keyword']);
 }
+
+//sorting
+if (isset($_POST["sort"])) {
+    if ($_POST["sort"] === "old") {
+        $produk = query("SELECT *, tb_kategori.id_kategori AS id FROM tb_produk JOIN tb_kategori ON tb_produk.id_kategori  = tb_kategori.id_kategori ORDER BY id_produk ASC");
+    }
+
+    if ($_POST["sort"] === "new") {
+        $produk = query("SELECT *, tb_kategori.id_kategori AS id FROM tb_produk JOIN tb_kategori ON tb_produk.id_kategori  = tb_kategori.id_kategori ORDER BY id_produk DESC");
+    }
+};
+//akhir sorting
 
 ?>
 
@@ -72,7 +86,7 @@ if (isset($_POST["cari"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user'></box-icon>
+                            <i class='bx bxs-user fs-4'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
@@ -97,6 +111,19 @@ if (isset($_POST["cari"])) {
 
     <!-- produk -->
     <form action="" method="post">
+        <select id="sort" name="sort" onchange="this.form.submit();" style="margin-left: 65px; margin-top: 10px; width: 100px; border: 2px solid black; border-radius: 5px; font-weight: 500;">
+            <?php if ($_POST["sort"] === "new") : ?>
+                <option value="old">Terlama</option>
+                <option value="new" selected>Terbaru</option>
+            <?php else : ?>
+                <option value="new">Terbaru</option>
+                <option value="old" selected>Terlama</option>
+            <?php endif; ?>
+        </select>
+        <!-- <button class="input-group-text btn btn-primary" id="basic-addon2">Cari Harga</button> -->
+    </form>
+
+    <form action="" method="post">
         <div class="card1" id="container">
             <?php foreach ($produk as $pro) : ?>
                 <div class="card cd1">
@@ -114,15 +141,15 @@ if (isset($_POST["cari"])) {
                         <li>
                             <p class="p1"><?= $pro["deskripsi"]  ?></p>
                         </li>
-                        <li>
-                            <?php
-                            $pro2 = $pro["deskripsi_2"];
-                            $pro_2 = explode(",", $pro2);
-                            ?>
-                            <?php foreach ($pro_2 as $proo) : ?>
+                        <?php
+                        $pro2 = $pro["deskripsi_2"];
+                        $pro_2 = explode(",", $pro2);
+                        ?>
+                        <?php foreach ($pro_2 as $proo) : ?>
+                            <li>
                                 <p class="p2"><?= $proo; ?></p>
-                            <?php endforeach; ?>
-                        </li>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             <?php endforeach; ?>

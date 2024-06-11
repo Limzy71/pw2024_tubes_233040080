@@ -67,7 +67,7 @@ if ($_SESSION["role"] !== "admin") {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon type='solid' name='user-check'></box-icon>
+                            <i type='solid' class='bx bxs-user-check fs-3'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../logout.php">Log Out</a></li>

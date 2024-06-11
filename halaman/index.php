@@ -15,7 +15,7 @@ if (isset($_SESSION["login"])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dasboard</title>
+    <title>Index</title>
 
     <!-- Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -53,7 +53,7 @@ if (isset($_SESSION["login"])) {
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <box-icon name='user'></box-icon>
+                            <i class='bx bx-user-x fs-2'></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="login.php">Login</a></li>
