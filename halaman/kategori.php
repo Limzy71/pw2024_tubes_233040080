@@ -51,12 +51,13 @@ if (isset($_POST["search"])) {
                 </form>
             </div>
 
-            <div class="pdf">
-                <a href="../pdf/pdf.php" target="_blank"><i class='bx bxs-file-pdf'></i></a>
-            </div>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
+
+                    <div class="pdf">
+                        <a href="../pdf/pdf.php" target="_blank"><i class='bx bxs-file-pdf'></i></a>
+                    </div>
 
                     <li class="nav-item">
                         <a class="nav-link a1" aria-current="page" href="dasboard.php">Home</a>

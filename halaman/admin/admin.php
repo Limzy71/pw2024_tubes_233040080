@@ -84,12 +84,12 @@ if ($_SESSION["role"] !== "admin") {
     <div class="lihat">
 
         <div class="detail">
-            <i class='bx bxs-user-account'></i>
+            <a href="kelola_user.php"><i class='bx bxs-user-account'></i></a>
             <a class="a5" href="kelola_user.php">Lihat User</a>
         </div>
 
         <div class="detail">
-            <i class='bx bx-box'></i>
+            <a href=""></a><i class='bx bx-box'></i>
             <a class="a3" href="tambah_kg.php">Tambah Kategori</a>
             <a class="a4" href="kg_admin.php">Lihat Kategori</a>
         </div>

@@ -42,7 +42,8 @@ nav .pdf .bxs-file-pdf{
   font-size: 30px;
   color: #000;
   margin-top: 5px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  margin-top: 10px;
 }
 
 nav .collapse .a1,
@@ -137,3 +138,6 @@ nav .collapse .dropdown-item {
   position: absolute;
 }
 /* CSS KG ADMIN END */
+
+
+/* media query */
